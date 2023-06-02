@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Request, Response, NextFunction } from 'express'
 import * as jwt from 'jsonwebtoken'
@@ -18,10 +17,12 @@ export function authenticateToken(
             .json({ success: false, message: 'Missing authentication token' })
     }
 
+    console.log('am i here?')
+
     try {
         // Verify and decode the token
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
         const decodedToken = jwt.verify(token, 'random-secret')
+        console.log('but not here right?')
         // Attach the decoded token to the request object
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore

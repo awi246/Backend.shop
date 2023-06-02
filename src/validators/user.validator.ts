@@ -1,27 +1,23 @@
 import { z } from 'zod'
 
-export const createPostDtop = z.object({
+export const createPostDto = z.object({
     body: z.object({
+        // id: z.string({
+        //     required_error: 'id is required',
+        // }),
         name: z.string({
-            required_error: 'Title is required',
+            required_error: 'name is required',
+        }),
+        address: z.string({
+            required_error: 'address is required',
+        }),
+        password: z.string({
+            required_error: 'password is required',
         }),
         email: z
             .string({
-                required_error: 'Email is required',
+                required_error: 'email is required',
             })
-            .email('Not a valid email'),
-    }),
-})
-
-export const putUser = z.object({
-    body: z.object({
-        name: z.string({
-            required_error: 'Name is required',
-        }),
-        email: z
-            .string({
-                required_error: 'Email is required',
-            })
-            .email('Not a valid email'),
+            .email('not a valid email'),
     }),
 })

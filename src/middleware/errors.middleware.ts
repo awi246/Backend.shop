@@ -2,7 +2,7 @@
 import HttpStatus from 'http-status-codes'
 
 import { Response, Request, NextFunction } from 'express'
-import buildError from '../utils/build-errors'
+import buildError from '../utils/build-error'
 
 export function methodNotAllowed(req: Request, res: Response) {
     res.status(HttpStatus.METHOD_NOT_ALLOWED).json({
