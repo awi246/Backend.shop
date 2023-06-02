@@ -6,5 +6,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . /app/
+RUN npx install
 CMD ["npm", "run", "dev"]
 
